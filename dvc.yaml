@@ -1,13 +1,13 @@
 stages:
   load_data:
-    cmd: python train.py data_load
+    cmd: python src/stages/load_data.py
     deps:
       - params.yaml
   train_model:
-    cmd: python train.py train
+    cmd: python src/stages/train.py
     deps:
       - params.yaml
   evaluate_model:
-    cmd: python evaluate.py evaluate
+    cmd: python src/stages/evaluate.py
     deps:
       - params.yaml
